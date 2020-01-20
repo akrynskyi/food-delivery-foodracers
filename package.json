@@ -1,7 +1,7 @@
 {
-  "name": "food-delivery",
+  "name": "foodracers",
   "version": "1.0.0",
-  "description": "My final project",
+  "description": "food delivery app",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --open --config webpack.dev.conf.js",
