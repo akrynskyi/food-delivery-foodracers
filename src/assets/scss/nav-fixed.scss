@@ -1,0 +1,95 @@
+.nav-fixed {
+    padding: 15px 0px;
+    position: sticky;
+    background-color: $default-color;
+    box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.2);
+    top: 0;
+    z-index: 20;
+    .nav-container {
+        justify-content: space-between;
+        .nav-item {
+            display: flex;
+            align-items: center;
+            &__phone-link {
+                display: flex;
+                align-items: center;
+                color: $mainFontColor;
+                text-transform: uppercase;
+                font-size: 14px;
+                @include desktop {
+                    display: none;
+                }
+                .phone-link-icon {
+                    color: $default-color;
+                    background-color: $neutral-primary;
+                    padding: 10px;
+                    border-radius: 8px;
+                    display: flex;
+                }
+                .phone-link-number {
+                    padding: 0px 20px;
+                }
+            }
+            // SEARCH BAR
+            &__search {
+                width: 100%;
+                max-width: 550px;
+                .text-input-with-button {
+                    display: flex;
+                    .search-input {
+                        border-top-left-radius: 8px;
+                        border-bottom-left-radius: 8px;
+                        font-size: $mainFontSize;
+                        background-color: $neutral-placeholder;
+                        color: $default-color;
+                        padding: 10px 0px 10px 15px;
+                        flex-grow: 1;
+                        &:required {
+                            box-shadow: none;
+                        }
+                        &::placeholder {
+                            color: $default-color;
+                        }
+                    }
+                    .search-btn {
+                        background-color: $neutral-placeholder;
+                        color: $default-color;
+                        border-top-right-radius: 8px;
+                        border-bottom-right-radius: 8px;
+                        padding: 10px 15px 10px 10px;
+                        cursor: pointer;
+                    }
+                }
+            }
+            // SEARCH BAR
+            .icon-container {
+                color: $neutral-primary;
+                font-size: 24px;
+            }
+            .show-more {
+                padding: 0px 20px;
+            }
+            .shopping-cart-btn {
+                display: flex;
+                position: relative;
+                cursor: pointer;
+                &__count {
+                    position: absolute;
+                    top: -2px;
+                    right: -12px;
+                    padding: 0px 4px;
+                    border-radius: 4px;
+                    color: $default-color;
+                    background-color: $success-color;
+                    font-size: 12px;
+                }
+            }
+            &:first-child {
+                flex-grow: 1;
+            }
+            &:last-child {
+                margin: 0px 20px;
+            }
+        }
+    }
+}

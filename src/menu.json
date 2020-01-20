@@ -1,0 +1,137 @@
+{
+  "menu": {
+    "beverages": [
+      {
+        "id": "1",
+        "type": "beverage",
+        "title": "Чай",
+        "price": 10.0,
+        "image": "/assets/img/meals/beverages/beverage-tea.jpg"
+      },
+      {
+        "id": "2",
+        "type": "beverage",
+        "title": "Кава",
+        "price": 22.99,
+        "image": "/assets/img/meals/beverages/beverage-coffee.jpg"
+      },
+      {
+        "id": "3",
+        "type": "beverage",
+        "title": "Какао",
+        "price": 29.99,
+        "image": "/assets/img/meals/beverages/beverage-cacao.jpg"
+      },
+      {
+        "id": "4",
+        "type": "beverage",
+        "title": "Апельсиновий сік",
+        "price": 15.0,
+        "image": "/assets/img/meals/beverages/beverage-citrus.jpg"
+      },
+      {
+        "id": "5",
+        "type": "beverage",
+        "title": "Кола",
+        "price": 20.99,
+        "image": "/assets/img/meals/beverages/beverage-cola.jpg"
+      },
+      {
+        "id": "6",
+        "type": "beverage",
+        "title": "Смузі",
+        "price": 25.0,
+        "image": "/assets/img/meals/beverages/beverage-shake.jpg"
+      }
+    ],
+    "italianCuisine": [
+      {
+        "id": "7",
+        "country": "it",
+        "type": "pasta",
+        "title": "Болоньєзе",
+        "price": 79.0,
+        "portion": "300г",
+        "image": "/assets/img/meals/italian/pasta/italian-pasta-1.jpg"
+      },
+      {
+        "id": "8",
+        "country": "it",
+        "type": "pasta",
+        "title": "Паста з білими грибами",
+        "price": 79.0,
+        "portion": "300г",
+        "image": "/assets/img/meals/italian/pasta/italian-pasta-2.jpg"
+      },
+      {
+        "id": "9",
+        "country": "it",
+        "type": "pizza",
+        "title": "Неаполь",
+        "price": 108,
+        "portion": "380г",
+        "radius": 33,
+        "image": "/assets/img/meals/italian/pizza/italian-pizza-1.jpg"
+      },
+      {
+        "id": "10",
+        "country": "it",
+        "type": "pizza",
+        "title": "Полло Песто",
+        "price": 119,
+        "portion": "440г",
+        "radius": 33,
+        "image": "/assets/img/meals/italian/pizza/italian-pizza-2.jpg"
+      },
+      {
+        "id": "11",
+        "country": "it",
+        "type": "pizza",
+        "title": "Прошуто",
+        "price": 129,
+        "portion": "350г",
+        "radius": 33,
+        "image": "/assets/img/meals/italian/pizza/italian-pizza-3.jpg"
+      },
+      {
+        "id": "12",
+        "country": "it",
+        "type": "pizza",
+        "title": "Реджина",
+        "price": 129,
+        "portion": "380г",
+        "radius": 33,
+        "image": "/assets/img/meals/italian/pizza/italian-pizza-4.jpg"
+      },
+      {
+        "id": "13",
+        "country": "it",
+        "type": "salad",
+        "title": "Цезар",
+        "price": 59,
+        "portion": "280г",
+        "image": "/assets/img/meals/italian/salad/italian-salad-1.jpg"
+      },
+      {
+        "id": "14",
+        "country": "it",
+        "type": "salad",
+        "title": "Салат з грушою",
+        "price": 89,
+        "portion": "280г",
+        "image": "/assets/img/meals/italian/salad/italian-salad-2.jpg"
+      },
+      {
+        "id": "15",
+        "country": "it",
+        "type": "salad",
+        "title": "Салат з грінками",
+        "price": 79,
+        "portion": "290г",
+        "image": "/assets/img/meals/italian/salad/italian-salad-3.jpg"
+      }
+    ],
+    "ukrainianCuisine": [],
+    "japanesseCuisine": []
+  }
+}

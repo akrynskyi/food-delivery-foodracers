@@ -1,0 +1,27 @@
+.burger {
+    display: none;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform .2s ease;
+    margin-right: 20px;
+    &-line {
+        width: 30px;
+        height: 5px;
+        background: $neutral-primary;
+        transition: width .2s ease;
+        &:not(:first-child){
+            margin-top: 4px;
+        }
+    }
+    &:hover > .burger-line {
+        &:nth-child(2) {
+            width: 25px;
+        }
+        &:nth-child(3) {
+            width: 20px;
+        }
+    }
+    @include desktop {
+        display: block;
+    }
+}

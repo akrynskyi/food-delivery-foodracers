@@ -1,0 +1,64 @@
+.btn-light {
+    display: inline-block;
+    color: $neutral-primary;
+    background-color: $default-color;
+    padding: 10px 20px;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: all .1s linear;
+    letter-spacing: 0.1em;
+    border: 1px solid $default-color;
+    &:hover {
+        background-color: transparent;
+        color: $default-color;
+    }
+}
+.btn-dark {
+    display: inline-block;
+    color: $default-color;
+    background-color: $neutral-primary;
+    padding: 10px 20px;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: all .1s linear;
+    letter-spacing: 0.1em;
+    border-radius: 2px;
+    border: 1px solid $neutral-primary;
+    &:hover {
+        background-color: transparent;
+        color: $neutral-primary;
+    }
+}
+.order-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    color: $default-color;
+    background-color: $neutral-primary;
+    padding: 15px 0px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    &__separator-dot {
+        display: inline-block;
+        margin: 0 18px;
+        height: 3px;
+        width: 3px;
+        border-radius: 100%;
+        background: $default-color;
+    }
+}
+.btn--reset {
+    background-color: transparent;
+    padding: 0;
+}
+.btn--mod {
+    background-color: transparent;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}

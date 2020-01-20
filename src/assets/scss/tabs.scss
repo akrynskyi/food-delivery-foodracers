@@ -1,0 +1,29 @@
+.underlined-tabs {
+    background-color: $neutral-light;
+    &-container {
+        justify-content: center;
+        &__tab {
+            padding: 20px;
+            color: $mainFontColor;
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                opacity: 0;
+                transition: 0.2s opacity ease;
+                background-color: $primary-color;
+                height: 4px;
+                border-top-left-radius: 2px;
+                border-top-right-radius: 2px;
+            }
+        }
+        &__tab--active {
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+}

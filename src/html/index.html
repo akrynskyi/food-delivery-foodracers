@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="uk-UA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Замовити обід</title>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <!-- Slick CSS -->
+  <link rel="stylesheet" href="/assets/libs/slick-carousel/slick/slick.css">
+  <!-- Slick CSS -->
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="/assets/fonts/font-awesome/css/all.min.css">
+  <!-- Font Awesome CSS -->
+</head>
+<body>
+  <!-- NAV FIXED -->
+  <nav class="nav-fixed">
+    <div class="section-inner">
+        <div class="nav-container main-wrapper">
+            <!-- nav items -->
+            <div class="nav-item">
+              <!-- burger menu -->
+              <div class="burger">
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+              </div>
+              <!-- burger menu -->
+                <!-- phone -->
+                <a href="tel:800-1234-56-78" class="nav-item__phone-link">
+                    <div class="phone-link-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="phone-link-number">
+                      800-8333-22-78
+                    </div>
+                </a>
+                <!-- phone -->
+                <div class="nav-item__search">
+                    <form action="/menu.html" method="GET" role="search">
+                        <div class="text-input-with-button">
+                            <input type="search" class="search-input" id="search" required autocapitalize="none" placeholder="Пошук">
+                            <button class="search-btn" id="search-action" title="Пошук страв">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="delivery btn-dark">
+                    Доставка
+                </a>
+                <a href="#" class="show-more icon-container">
+                    <i class="fas fa-ellipsis-h"></i>
+                </a>
+                <!-- card button -->
+                <button class="shopping-cart-btn btn--reset" id="openCart">
+                    <div class="icon-container">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <div class="shopping-cart-btn__count" id="itemsCounter">
+                        0
+                    </div>
+                </button>
+                <!-- card button -->
+            </div>
+            <!-- nav items -->
+        </div>
+    </div>
+  </nav>
+  <!-- NAV FIXED -->
+
+  <!-- CART -->
+  <div class="overlay" id="cartOverlay">
+    <div class="cart hero">
+        <!-- cart-header -->
+        <div class="cart-header">
+            <h1 class="cart-header__title">
+                Кошик
+            </h1>
+            <button class="cart-header__close-btn btn--mod" id="closeCart">
+                <svg class="icon" role="presentation" viewBox="0 0 16 14">
+                    <path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path>
+                </svg>
+            </button>
+        </div>
+        <!-- cart content -->
+        <div class="cart-container-scrollable">
+            <div class="cart-item-wrapper">
+
+            </div>
+        </div>
+        <!-- cart footer -->
+        <div class="cart-footer">
+            <div class="order-notes">
+                Вартість доставки враховано
+            </div>
+            <div class="order-btn-box">
+                <button class="order-btn">
+                    <span class="order-btn__text" id="orderBtn">
+                        Замовити
+                    </span>
+                    <span class="order-btn__separator-dot"></span>
+                    <span class="order-btn__checkout" id="orderCheckout">
+                        ₴0
+                    </span>
+                </button>
+            </div>
+        </div>
+        <!-- cart footer -->
+    </div>
+  </div>
+  <!-- CART -->
+
+  <!-- SIDEBAR NAV -->
+  <div class="overlay" id="sidebarOverlay">
+    <div class="sidebar hero">
+        <!-- sidebar header -->
+        <div class="sidebar-header">
+            <button class="sidebar-header__close-btn btn--mod" id="closeSidebar">
+                <svg class="icon" role="presentation" viewBox="0 0 16 14">
+                    <path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path>
+                </svg>
+            </button>
+        </div>
+        <!-- sidebar header -->
+        <!-- navigation -->
+        <nav class="sidebar-navigation">
+          <ul class="sidebar-navigation-list">
+            <li class="sidebar-navigation-list-item">
+              <a href="index.html" class="sidebar-navigation-list-item__link">
+                Головна
+              </a>
+            </li>
+            <li class="sidebar-navigation-list-item">
+              <a href="about.html" class="sidebar-navigation-list-item__link">
+                Про нас
+              </a>
+            </li>
+            <li class="sidebar-navigation-list-item ">
+              <a href="menu.html" class="sidebar-navigation-list-item__link colappsible__btn">
+                Меню
+                <span class="collapsible-plus"></span>
+              </a>
+              <ul class="colappsible-list">
+                <li class="colappsible-list-item">
+                  <a href="#" class="colappsible-list-item-link">
+                    Комплексні обіди
+                  </a>
+                </li>
+                <li class="colappsible-list-item">
+                  <a href="#" class="colappsible-list-item-link">
+                    Українська кухня
+                  </a>
+                </li>
+                <li class="colappsible-list-item">
+                  <a href="#" class="colappsible-list-item-link">
+                    Італійська кухня
+                  </a>
+                </li>
+                <li class="colappsible-list-item">
+                  <a href="#" class="colappsible-list-item-link">
+                    Японська кухня
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="sidebar-navigation-list-item">
+              <a href="gallery.html" class="sidebar-navigation-list-item__link">
+                Галерея
+              </a>
+            </li>
+            <li class="sidebar-navigation-list-item">
+              <a href="contacts.html" class="sidebar-navigation-list-item__link">
+                Контакти
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- navigation -->
+        <!-- sidebar footer -->
+        <div class="sidebar-footer">
+          <ul class="social-media--mod">
+            <li class="social-box--mod">
+              <a href="#" class="social-box--mod__link">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+            <li class="social-box--mod">
+              <a href="#" class="social-box--mod__link">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="social-box--mod">
+              <a href="#" class="social-box--mod__link">
+                <i class="fab fa-facebook"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- sidebar footer -->
+    </div>
+  </div>
+  <!-- SIDEBAR NAV -->
+
+  <!-- SECTION HEADER -->
+  <header class="section-header header--homepage">
+    <!-- header navbar -->
+    <div class="section-header-navbar">
+      <div class="section-inner">
+        <div class="header-container main-wrapper">
+          <!-- logo -->
+          <div class="logo">
+            <a href="index.html" class="logo-link">
+              <div class="logo-link__icon">
+                
+              </div>
+              <div class="logo-link__text">
+                Foodracers
+              </div>
+            </a>
+          </div>
+          <!-- logo -->
+          <!-- navigation -->
+          <nav class="nav-container">
+            <ul class="nav-container-list">
+              <li class="nav-container-list-item">
+                <a href="index.html" class="nav-container-list-item__link">
+                  Головна
+                </a>
+              </li>
+              <li class="nav-container-list-item">
+                <a href="about.html" class="nav-container-list-item__link">
+                  Про нас
+                </a>
+              </li>
+              <li class="nav-container-list-item ">
+                <a href="menu.html" class="nav-container-list-item__link">
+                  Меню
+                </a>
+                <ul class="dropdown-list">
+                  <li class="dropdown-list-item">
+                    <a href="#" class="dropdown-list-item-link">
+                      Комплексні обіди
+                    </a>
+                  </li>
+                  <li class="dropdown-list-item">
+                    <a href="#" class="dropdown-list-item-link">
+                      Українська кухня
+                    </a>
+                  </li>
+                  <li class="dropdown-list-item">
+                    <a href="#" class="dropdown-list-item-link">
+                      Італійська кухня
+                    </a>
+                  </li>
+                  <li class="dropdown-list-item">
+                    <a href="#" class="dropdown-list-item-link">
+                      Японська кухня
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-container-list-item">
+                <a href="gallery.html" class="nav-container-list-item__link">
+                  Галерея
+                </a>
+              </li>
+              <li class="nav-container-list-item">
+                <a href="contacts.html" class="nav-container-list-item__link">
+                  Контакти
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <!-- navigation -->
+        </div>
+    </div>
+    </div>
+    <!-- header navbar -->
+    <!-- header slider -->
+    <div class="section-header-slider">
+      <div class="section-header-slider-slide__1">
+        <div class="slide-content">
+          <div class="slide-content-text">
+              Замовте смачний обід у нас та отримайте безкоштовну доставку
+          </div>
+          <div class="slide-content-action">
+            <a href="menu.html" class="btn-light">
+              Замовити
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="section-header-slider-slide__2">
+        <div class="slide-content">
+          slide 2
+        </div>
+      </div>
+      <div class="section-header-slider-slide__3">
+        <div class="slide-content">
+          slide 3
+        </div>
+      </div>
+      <div class="section-header-slider-slide__4">
+        <div class="slide-content">
+          slide 4
+        </div>
+      </div>
+    </div>
+    <!-- header slider -->
+  </header>
+  <!-- SECTION HEADER -->
+
+  <!-- SECTIONS SLIDESHOW -->
+  <!-- screen-1 -->
+  <section class="section-slideshow fullscreen__1">
+    <div class="section-inner">
+      <div class="main-wrapper section-slideshow-wrapper">
+        <div class="section-slideshow__item">
+          <a href="menu.html" class="btn-light">
+            Меню
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- screen-2 -->
+  <section class="section-slideshow fullscreen__2">
+    <div class="section-inner">
+      <div class="main-wrapper">
+        <!-- <div class="section-slideshow__item">
+          text/img
+        </div>
+        <div class="section-slideshow__item">
+          text/img
+        </div> -->
+      </div>
+    </div>
+  </section>
+  <!-- screen3 -->
+  <section class="section-slideshow fullscreen__3">
+    <div class="section-inner">
+      <div class="main-wrapper">
+        <!-- <div class="section-slideshow__item">
+          text/img
+        </div>
+        <div class="section-slideshow__item">
+          text/img
+        </div> -->
+      </div>
+    </div>
+  </section>
+  <!-- SECTIONS SLIDESHOW -->
+
+  <!-- SECTION FOOTER -->
+  <footer class="section-footer">
+    <div class="section-inner">
+      <div class="section-footer-container">
+        <div class="footer-block">
+          <h2 class="footer-block__logo">
+            Foodracers
+          </h2>
+          <ul class="info">
+            <li class="info-box">
+              <a href="" class="info-link footer-link">
+                <i class="fas fa-map-marker-alt"></i>
+                <span class="info-link__text">
+                  Україна
+                </span>
+              </a>
+            </li>
+            <li class="info-box">
+              <a href="" class="info-link footer-link">
+                <i class="far fa-envelope"></i>
+                <span class="info-link__text">
+                  foodracers@gmail.com
+                </span>
+              </a>
+            </li>
+            <li class="info-box">
+              <a href="" class="info-link footer-link">
+                <i class="fas fa-phone-alt"></i>
+                <span class="info-link__text">
+                  800-8333-22-78
+                </span>
+              </a>
+            </li>
+          </ul>
+          <!-- Social media block -->
+          <ul class="social-media">
+            <li class="social-box">
+              <a href="#" class="social-box__link">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+            <li class="social-box">
+              <a href="#" class="social-box__link">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="social-box">
+              <a href="#" class="social-box__link">
+                <i class="fab fa-facebook"></i>
+              </a>
+            </li>
+          </ul>
+          <!-- Social media block -->
+        </div>
+        <div class="footer-block">
+          <!-- <h2 class="footer-block__title">
+            Підписка
+          </h2> -->
+          <form action="#" class="footer-newsletter">
+            <input type="email" class="form-input" placeholder="Введіть ваш email">
+            <button class="form-submit btn-light">
+              Підписатися
+            </button>
+          </form>
+        </div>
+      </div>
+      <!-- footer aside -->
+      <div class="section-footer-aside">
+        <div class="section-footer-aside__copyright">
+          <a href="index/html" class="copyright-link">
+            © Всі права захищено
+          </a>
+        </div>
+        <!-- navigation -->
+        <nav class="section-footer-aside__nav">
+          <ul class="nav-container-list">
+            <li class="nav-container-list-item">
+              <a href="index.html" class="nav-container-list-item__link">
+                Головна
+              </a>
+            </li>
+            <li class="nav-container-list-item">
+              <a href="about.html" class="nav-container-list-item__link">
+                Про нас
+              </a>
+            </li>
+            <li class="nav-container-list-item">
+              <a href="menu.html" class="nav-container-list-item__link">
+                Меню
+              </a>
+            </li>
+            <li class="nav-container-list-item">
+              <a href="gallery.html" class="nav-container-list-item__link">
+                Галерея
+              </a>
+            </li>
+            <li class="nav-container-list-item">
+              <a href="contacts.html" class="nav-container-list-item__link">
+                Контакти
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- navigation -->
+      </div>
+      <!-- footer aside -->
+    </div>
+  </footer>
+  <!-- SECTION FOOTER -->
+
+  <!-- jquery -->
+  <script src="/assets/libs/jquery/jquery.min.js"></script>
+  <!-- jquery -->
+  <!-- slick -->
+  <script src="/assets/libs/slick-carousel/slick/slick.min.js"></script>
+  <!-- slick -->
+</body>
+</html>

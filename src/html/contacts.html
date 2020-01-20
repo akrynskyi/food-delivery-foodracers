@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="uk-UA">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Контакти</title>
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="/assets/fonts/font-awesome/css/all.min.css">
+    <!-- Font Awesome CSS -->
+</head>
+<body>
+    <!-- NAV FIXED -->
+    <nav class="nav-fixed">
+        <div class="section-inner">
+            <div class="nav-container main-wrapper">
+                <!-- nav items -->
+                <div class="nav-item">
+                    <!-- burger menu -->
+                    <div class="burger">
+                    <div class="burger-line"></div>
+                    <div class="burger-line"></div>
+                    <div class="burger-line"></div>
+                    </div>
+                    <!-- burger menu -->
+                    <!-- phone -->
+                    <a href="tel:800-1234-56-78" class="nav-item__phone-link">
+                        <div class="phone-link-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="phone-link-number">
+                            800-8333-22-78
+                        </div>
+                    </a>
+                    <!-- phone -->
+                    <div class="nav-item__search">
+                        <form action="/menu.html" method="GET" role="search">
+                            <div class="text-input-with-button">
+                                <input type="search" class="search-input" id="search" required autocapitalize="none" placeholder="Пошук">
+                                <button class="search-btn" id="search-action" title="Пошук страв">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="delivery btn-dark">
+                        Доставка
+                    </a>
+                    <a href="#" class="show-more icon-container">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </a>
+                    <!-- card button -->
+                    <button class="shopping-cart-btn btn--reset" id="openCart">
+                        <div class="icon-container">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <div class="shopping-cart-btn__count" id="itemsCounter">
+                            0
+                        </div>
+                    </button>
+                    <!-- card button -->
+                </div>
+                <!-- nav items -->
+            </div>
+        </div>
+    </nav>
+    <!-- NAV FIXED -->
+
+    <!-- CART -->
+    <div class="overlay" id="cartOverlay">
+        <div class="cart hero">
+            <!-- cart-header -->
+            <div class="cart-header">
+                <h1 class="cart-header__title">
+                    Кошик
+                </h1>
+                <button class="cart-header__close-btn btn--mod" id="closeCart">
+                    <svg class="icon" role="presentation" viewBox="0 0 16 14">
+                        <path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- cart content -->
+            <div class="cart-container-scrollable">
+                <div class="cart-item-wrapper">
+                    
+                </div>
+            </div>
+            <!-- cart footer -->
+            <div class="cart-footer">
+                <div class="order-notes">
+                    Вартість доставки враховано
+                </div>
+                <div class="order-btn-box">
+                    <button class="order-btn">
+                        <span class="order-btn__text" id="orderBtn">
+                            Замовити
+                        </span>
+                        <span class="order-btn__separator-dot"></span>
+                        <span class="order-btn__checkout" id="orderCheckout">
+                            ₴0
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <!-- cart footer -->
+        </div>
+    </div>
+    <!-- CART -->
+
+    <!-- SIDEBAR NAV -->
+    <div class="overlay" id="sidebarOverlay">
+        <div class="sidebar hero">
+            <!-- sidebar header -->
+            <div class="sidebar-header">
+                <button class="sidebar-header__close-btn btn--mod" id="closeSidebar">
+                    <svg class="icon" role="presentation" viewBox="0 0 16 14">
+                        <path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- sidebar header -->
+            <!-- navigation -->
+            <nav class="sidebar-navigation">
+            <ul class="sidebar-navigation-list">
+                <li class="sidebar-navigation-list-item">
+                <a href="index.html" class="sidebar-navigation-list-item__link">
+                    Головна
+                </a>
+                </li>
+                <li class="sidebar-navigation-list-item">
+                <a href="about.html" class="sidebar-navigation-list-item__link">
+                    Про нас
+                </a>
+                </li>
+                <li class="sidebar-navigation-list-item ">
+                <a href="menu.html" class="sidebar-navigation-list-item__link colappsible__btn">
+                    Меню
+                    <span class="collapsible-plus"></span>
+                </a>
+                <ul class="colappsible-list">
+                    <li class="colappsible-list-item">
+                    <a href="#" class="colappsible-list-item-link">
+                        Комплексні обіди
+                    </a>
+                    </li>
+                    <li class="colappsible-list-item">
+                    <a href="#" class="colappsible-list-item-link">
+                        Українська кухня
+                    </a>
+                    </li>
+                    <li class="colappsible-list-item">
+                    <a href="#" class="colappsible-list-item-link">
+                        Італійська кухня
+                    </a>
+                    </li>
+                    <li class="colappsible-list-item">
+                    <a href="#" class="colappsible-list-item-link">
+                        Японська кухня
+                    </a>
+                    </li>
+                </ul>
+                </li>
+                <li class="sidebar-navigation-list-item">
+                <a href="gallery.html" class="sidebar-navigation-list-item__link">
+                    Галерея
+                </a>
+                </li>
+                <li class="sidebar-navigation-list-item">
+                <a href="contacts.html" class="sidebar-navigation-list-item__link">
+                    Контакти
+                </a>
+                </li>
+            </ul>
+            </nav>
+            <!-- navigation -->
+            <!-- sidebar footer -->
+            <div class="sidebar-footer">
+            <ul class="social-media--mod">
+                <li class="social-box--mod">
+                <a href="#" class="social-box--mod__link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                </li>
+                <li class="social-box--mod">
+                <a href="#" class="social-box--mod__link">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                </li>
+                <li class="social-box--mod">
+                <a href="#" class="social-box--mod__link">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                </li>
+            </ul>
+            </div>
+            <!-- sidebar footer -->
+        </div>
+    </div>
+    <!-- SIDEBAR NAV -->
+
+    <!-- SECTION HEADER -->
+    <header class="section-header">
+        <!-- header navbar -->
+        <div class="section-header-navbar header--other-pages">
+            <div class="section-inner">
+                <div class="header-container main-wrapper">
+                    <!-- logo -->
+                    <div class="logo">
+                        <a href="index.html" class="logo-link">
+                            <div class="logo-link__text">
+                                Foodracers
+                            </div>
+                        </a>
+                    </div>
+                    <!-- logo -->
+                    <!-- navigation -->
+                    <nav class="nav-container">
+                        <ul class="nav-container-list">
+                            <li class="nav-container-list-item">
+                                <a href="index.html" class="nav-container-list-item__link">
+                                    Головна
+                                </a>
+                            </li>
+                            <li class="nav-container-list-item">
+                                <a href="about.html" class="nav-container-list-item__link">
+                                    Про нас
+                                </a>
+                            </li>
+                            <li class="nav-container-list-item">
+                                <a href="menu.html" class="nav-container-list-item__link">
+                                    Меню
+                                </a>
+                                <!-- DROPDOWN -->
+                            </li>
+                            <li class="nav-container-list-item">
+                                <a href="gallery.html" class="nav-container-list-item__link">
+                                    Галерея
+                                </a>
+                            </li>
+                            <li class="nav-container-list-item">
+                                <a href="contacts.html" class="nav-container-list-item__link">
+                                    Контакти
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- navigation -->
+                </div>
+            </div>
+        </div>
+        <!-- header navbar -->
+    </header>
+    <!-- SECTION HEADER -->
+
+    <!-- SECTION CONTACTS -->
+    <section class="section-contacts">
+        <div class="section-inner">
+            <div class="contacts-block">
+                <div class="contacts-block-item">
+                    <h4 class="contacts-block-item__title">
+                        Телефони служби підтримки
+                    </h4>
+                    <ul class="block-list">
+                        <li class="block-list__item">
+                            800-0822-22-14
+                        </li>
+                        <li class="block-list__item">
+                            800-7866-78-18
+                        </li>
+                        <li class="block-list__item">
+                            800-9646-94-04
+                        </li>
+                        <li class="block-list__item">
+                            800-9729-36-96
+                        </li>
+                    </ul>
+                </div>
+                <div class="contacts-block-item">
+                    <div class="contacts-block-item__title">
+                        Відділ по підбору персоналу
+                    </div>
+                    <ul class="block-list">
+                        <li class="block-list__item">
+                            Email: hr.foodracers@gmail.com
+                        </li>
+                    </ul>
+                </div>
+                <div class="contacts-block-item">
+                    <div class="contacts-block-item__title">
+                        Надіслати свої побажання
+                    </div>
+                    <ul class="block-list">
+                        <li class="block-list__item">
+                            Email: foodracers@gmail.com
+                        </li>
+                        <li class="block-list__item">
+                            Тел: 800-8333-22-78
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+            <div class="map-block">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d651.4036319983337!2d28.446363485237207!3d49.2268370967308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472d5c7faffcbb77%3A0x7de87b41144bb658!2z0KjQsNGD0YBtYW4!5e0!3m2!1sru!2sua!4v1579463888405!5m2!1sru!2sua" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            </div>
+    </section>
+    <!-- SECTION CONTACTS -->
+
+    <!-- SECTION FOOTER -->
+    <footer class="section-footer">
+        <div class="section-inner">
+            <div class="section-footer-container">
+            <div class="footer-block">
+                <h2 class="footer-block__logo">
+                Foodracers
+                </h2>
+                <ul class="info">
+                <li class="info-box">
+                    <a href="" class="info-link footer-link">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span class="info-link__text">
+                        Україна
+                    </span>
+                    </a>
+                </li>
+                <li class="info-box">
+                    <a href="" class="info-link footer-link">
+                    <i class="far fa-envelope"></i>
+                    <span class="info-link__text">
+                        foodracers@gmail.com
+                    </span>
+                    </a>
+                </li>
+                <li class="info-box">
+                    <a href="" class="info-link footer-link">
+                    <i class="fas fa-phone-alt"></i>
+                    <span class="info-link__text">
+                        800-8333-22-78
+                    </span>
+                    </a>
+                </li>
+                </ul>
+                <!-- Social media block -->
+                <ul class="social-media">
+                <li class="social-box">
+                    <a href="#" class="social-box__link">
+                    <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+                <li class="social-box">
+                    <a href="#" class="social-box__link">
+                    <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+                <li class="social-box">
+                    <a href="#" class="social-box__link">
+                    <i class="fab fa-facebook"></i>
+                    </a>
+                </li>
+                </ul>
+                <!-- Social media block -->
+            </div>
+            <div class="footer-block">
+                <!-- <h2 class="footer-block__title">
+                Підписка
+                </h2> -->
+                <form action="#" class="footer-newsletter">
+                <input type="email" class="form-input" placeholder="Введіть ваш email">
+                <button class="form-submit btn-light">
+                    Підписатися
+                </button>
+                </form>
+            </div>
+            </div>
+            <!-- footer aside -->
+            <div class="section-footer-aside">
+            <div class="section-footer-aside__copyright">
+                <a href="index/html" class="copyright-link">
+                © Всі права захищено
+                </a>
+            </div>
+            <!-- navigation -->
+            <nav class="section-footer-aside__nav">
+                <ul class="nav-container-list">
+                <li class="nav-container-list-item">
+                    <a href="index.html" class="nav-container-list-item__link">
+                    Головна
+                    </a>
+                </li>
+                <li class="nav-container-list-item">
+                    <a href="about.html" class="nav-container-list-item__link">
+                    Про нас
+                    </a>
+                </li>
+                <li class="nav-container-list-item">
+                    <a href="menu.html" class="nav-container-list-item__link">
+                    Меню
+                    </a>
+                </li>
+                <li class="nav-container-list-item">
+                    <a href="gallery.html" class="nav-container-list-item__link">
+                    Галерея
+                    </a>
+                </li>
+                <li class="nav-container-list-item">
+                    <a href="contacts.html" class="nav-container-list-item__link">
+                    Контакти
+                    </a>
+                </li>
+                </ul>
+            </nav>
+            <!-- navigation -->
+            </div>
+            <!-- footer aside -->
+        </div>
+    </footer>
+    <!-- SECTION FOOTER -->
+
+    <!-- jquery -->
+    <script src="/assets/libs/jquery/jquery.min.js"></script>
+    <!-- jquery -->
+    <!-- slick -->
+    <script src="/assets/libs/slick-carousel/slick/slick.min.js"></script>
+    <!-- slick -->
+</body>
+</html>

@@ -1,0 +1,89 @@
+.sidebar {
+  left: 0;
+  transform: translateX(-100%);
+  box-shadow: 5px 0px 10px 0px rgba(0, 0, 0, 0.4);
+  &__open {
+    transform: translateX(0);
+  }
+  &-header {
+    padding: 25px 30px;
+  }
+  &-navigation {
+    flex-grow: 1;
+    &-list {
+      padding: 0px 40px;
+      &-item {
+        border-bottom: 1px solid $border-base;
+        padding: 20px 0px;
+        &__link {
+          position: relative;
+          color: $neutral-primary;
+        }
+        &:last-child {
+          border-bottom: none;
+        }
+        .colappsible-list {
+          height: 100%;
+          overflow: hidden;
+          transition: height 0.2s ease-out;
+          left: 0;
+          top: calc(100% + 0.25rem);
+          background-color: $default-color;
+          &-item {
+            padding: 15px;
+            transition: all 0.1s linear;
+            &-link {
+              color: $neutral-regular;
+              font-size: 14px;
+              font-weight: 300;
+            }
+            &:hover {
+              .colappsible-list-item-link {
+                color: $mainFontColor;
+              }
+            }
+            &:last-child {
+              padding-bottom: 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+  &-footer {
+    padding: 20px 40px;
+    border-top: 1px solid $border-base;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.colappsible__btn {
+  display: block;
+}
+.collapsible-plus {
+  position: absolute;
+  right: 0;
+  top: calc(50% - (11px / 2));
+  width: 11px;
+  height: 11px;
+  &:before,
+  &:after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    background-color: $mainFontColor;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  }
+  &:before {
+    width: 11px;
+    height: 1px;
+    opacity: 1;
+  }
+  &:after {
+    width: 1px;
+    height: 11px;
+  }
+}

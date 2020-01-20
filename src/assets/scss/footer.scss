@@ -1,0 +1,121 @@
+.footer-link {
+    color: $neutral-secondary;
+}
+.section-footer {
+    // background-color: $neutral-primary;
+    background-color: $mainFontColor;
+    &-container {
+        display: flex;
+        justify-content: space-between;
+        // align-items: center;
+        padding-top: 40px;
+        @include tablet {
+        flex-direction: column;
+        align-items: center;
+        }
+        .footer-block {
+            color: $default-color;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            flex-basis: 375px;
+            @include tablet {
+                width: 50%;
+                flex-basis: unset;
+                &:last-child {
+                    margin-top: 20px;
+                }
+            }
+        &__logo {
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding-bottom: 20px;
+            font-size: 32px;
+            position: relative;
+        }
+        &__title {
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding-bottom: 20px;
+            font-size: 18px;
+        }
+        .info {
+            padding: 20px 0px;
+            &-box {
+                padding-bottom: 15px;
+                &:last-child {
+                    padding-bottom: 0;
+                }
+                .info-link__text {
+                    margin-left: 10px;
+                }
+            }
+        }
+        
+        }
+    }
+    &-aside {
+        display: flex;
+        padding: 40px 0px;
+        &__nav {
+            flex-grow: 1;
+            .nav-container-list {
+                display: flex;
+                justify-content: space-between;
+                &-item {
+                    &__link {
+                        color: $default-color;
+                    }
+                }
+                @include tablet {
+                    justify-content: space-around;
+                } 
+            }
+            @include tablet {
+                width: 100%;
+            }
+        }
+        &__copyright {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            .copyright-link {
+                color: $default-color;
+                font-size: 14px;
+            }
+            @include tablet {
+                order: 1;
+                margin-top: 20px;
+            }
+        }
+        @include tablet {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
+// newsletter form
+.footer-newsletter {
+    .form-input {
+        display: block;
+        padding: 12px 14px;
+        border-radius: 0;
+        border: 1px solid $border-base;
+        width: 100%;
+        line-height: normal;
+        resize: none;
+        transition: border-color 0.1s ease-in-out;
+        background: transparent;
+        color: $default-color;
+        margin-bottom: 20px;
+        &::placeholder {
+            color: $neutral-secondary;
+            font-size: 14px;
+        }
+    }
+    @include tablet {
+        display: flex;
+        flex-direction: column;
+    }
+}

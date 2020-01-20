@@ -1,0 +1,135 @@
+.cart {
+    right: 0;
+    transform: translateX(100%);
+    box-shadow: -5px 0px 10px 0px rgba(0,0,0,0.4);
+    &__open {
+        transform: translateX(0);
+    }
+    &-header {
+        display: flex;
+        justify-content: space-between;
+        padding: 25px 30px;
+        border-bottom: 1px solid $border-base;
+        &__title {
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+    }
+    &-container-scrollable {
+        overflow: auto;
+        flex-grow: 1;
+    }
+    &-item-wrapper {
+        padding: 0px 30px;
+        .cart-item {
+            display: flex;
+            margin: 30px 0px;
+            &__image-wrapper {
+                width: 50%;
+                margin-right: 25px;
+            }
+            &__info {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                padding: 10px 0px;
+                &-meta {
+                    flex-grow: 1;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    margin-bottom: 10px;
+                    .item-title {
+                        font-size: 11px;
+                        text-transform: uppercase;
+                        color: $mainFontColor;
+                    }
+                    .item-portion {
+                        font-size: 10px;
+                        color: $neutral-secondary;
+                    }
+                    .item-price {
+                        font-size: 10px;
+                        color: $neutral-secondary;
+                    }
+                }
+                &-actions {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .quantity-selector-box {
+                        flex-grow: 1;
+                        .quantity-selector {
+                            display: flex;
+                            justify-content: space-between;
+                            border: 1px solid $border-base;
+                            // padding: 7px 14px;
+                            &__btn {
+                                cursor: pointer;
+                                color: $neutral-primary;
+                                transition: color .1s ease;
+                                padding: 7px 14px;
+                                &:first-child {
+                                    padding-right: 0px;
+                                }
+                                &:last-child {
+                                    padding-left: 0px;
+                                }
+                                &:hover {
+                                    color: $mainFontColor;
+                                }
+                                .quantity-icon {
+                                    width: 10px;
+                                    height: 10px;
+                                }
+                            }
+                            &__current-quantity {
+                                font-size: 12px;
+                                padding: 7px 0px;
+                            }
+                        }
+                    }
+                    .remove-item-box {
+                        flex-grow: 1;
+                        display: flex;
+                        justify-content: center;
+                        .remove-btn {
+                            position: relative;
+                            font-size: 8px;
+                            letter-spacing: 0.2em;
+                            text-transform: uppercase;
+                            cursor: pointer;
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                width: 100%;
+                                height: 1px;
+                                left: 0;
+                                bottom: -1px;
+                                background-color: $neutral-secondary;
+                                transform: scale(1, 1);
+                                transform-origin: left center;
+                                transition: transform 0.2s ease-in-out;
+                            }
+                            &:hover::before {
+                                transform: scale(0, 1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-footer {
+        padding: 20px 30px 30px 30px;
+        border-top: 1px solid $border-base;
+        .order-notes {
+            padding-bottom: 20px;
+            font-size: 14px;
+            color: $neutral-regular;
+        }
+        .order-btn-box {
+            display: flex;
+        }
+    }
+}
