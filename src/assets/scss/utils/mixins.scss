@@ -48,6 +48,12 @@
   }
 }
 
+@mixin smTablet {
+  @media only screen and (max-width: #{$smTableWidth}) {
+    @content;
+  }
+}
+
 @mixin mobile {
   @media only screen and (max-width: #{$phoneWidth}) {
     @content;
