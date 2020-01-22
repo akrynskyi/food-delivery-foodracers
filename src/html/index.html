@@ -38,9 +38,9 @@
                 </a>
                 <!-- phone -->
                 <div class="nav-item__search">
-                    <form action="/menu.html" method="GET" role="search">
+                    <form action="/menu.html" method="GET" role="search" id="search-filter">
                         <div class="text-input-with-button">
-                            <input type="search" class="search-input" id="search" required autocapitalize="none" placeholder="Пошук">
+                            <input type="search" class="search-input" id="search-input" required autocapitalize="none" placeholder="Пошук">
                             <button class="search-btn" id="search-action" title="Пошук страв">
                                 <i class="fas fa-search"></i>
                             </button>
@@ -296,17 +296,23 @@
       </div>
       <div class="section-header-slider-slide__2">
         <div class="slide-content">
-          slide 2
+          <div class="slide-content-text">
+            В асортименті їжа української, італійської та японської кухні
+          </div>
         </div>
       </div>
       <div class="section-header-slider-slide__3">
         <div class="slide-content">
-          slide 3
+          <div class="slide-content-text">
+            Наші кур'єри доставлять вам обід протягом 60 хвилин
+          </div>
         </div>
       </div>
       <div class="section-header-slider-slide__4">
         <div class="slide-content">
-          slide 4
+          <div class="slide-content-text">
+            З нами зручно проводити дні народження та інші свята
+          </div>
         </div>
       </div>
     </div>
@@ -330,26 +336,29 @@
   <!-- screen-2 -->
   <section class="section-slideshow fullscreen__2">
     <div class="section-inner">
-      <div class="main-wrapper">
-        <!-- <div class="section-slideshow__item">
-          text/img
+      <div class="main-wrapper section-slideshow-wrapper">
+        <div class="section-slideshow__item">
+          <a href="about.html" class="btn-light">
+            Про нас
+          </a>
         </div>
         <div class="section-slideshow__item">
-          text/img
-        </div> -->
+          <a href="gallery.html" class="btn-light">
+            Галерея
+          </a>
+        </div>
       </div>
     </div>
   </section>
   <!-- screen3 -->
   <section class="section-slideshow fullscreen__3">
     <div class="section-inner">
-      <div class="main-wrapper">
-        <!-- <div class="section-slideshow__item">
-          text/img
-        </div>
+      <div class="main-wrapper section-slideshow-wrapper">
         <div class="section-slideshow__item">
-          text/img
-        </div> -->
+          <a href="contacts.html" class="btn-light">
+            Контакти
+          </a>
+        </div>
       </div>
     </div>
   </section>

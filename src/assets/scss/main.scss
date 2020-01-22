@@ -192,6 +192,10 @@ body {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0px 20px;
       &::before {
         content: "";
         position: absolute;
@@ -211,6 +215,12 @@ body {
         @include tablet {
           font-size: 36px;
         }
+        @include smTablet {
+          font-size: 32px;
+        }
+        @include mobile {
+          font-size: 28px;
+        }
       }
       &-action {
         margin-top: 40px;
@@ -218,22 +228,22 @@ body {
       }
     }
     &-slide__1 {
-      background-image: url("/assets/img/header-slider-images/fried-rice-with-poached-egg.jpg");
+      background-image: url("/assets/img/header-slider-images/slider-image-1.jpg");
       background-size: cover;
       background-repeat: no-repeat;
     }
     &-slide__2 {
-      background-image: url("/assets/img/header-slider-images/pasta-with-parmesan.jpg");
+      background-image: url("/assets/img/header-slider-images/slider-image-2.jpg");
       background-size: cover;
       background-repeat: no-repeat;
     }
     &-slide__3 {
-      background-image: url("/assets/img/header-slider-images/bread-breakfast.jpg");
+      background-image: url("/assets/img/header-slider-images/slider-image-3.jpg");
       background-size: cover;
       background-repeat: no-repeat;
     }
     &-slide__4 {
-      background-image: url("/assets/img/header-slider-images/pasta-with-parmesan.jpg");
+      background-image: url("/assets/img/header-slider-images/slider-image-4.jpg");
       background-size: cover;
       background-repeat: no-repeat;
     }
@@ -299,6 +309,7 @@ body {
   }
   &__item {
     display: flex;
+    margin-left: 15px;
   }
 }
 .fullscreen__1 {
@@ -343,6 +354,9 @@ body {
       padding: 20px 0px;
       text-transform: uppercase;
       letter-spacing: 0.2em;
+    }
+    @include smTablet {
+      flex-direction: column;
     }
   }
 }
@@ -506,6 +520,11 @@ body {
     display: flex;
     justify-content: space-between;
     margin: 40px 0px;
+    @include tablet {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
     &-item {
       &__title {
         font-size: 20px;
@@ -520,6 +539,12 @@ body {
             padding-bottom: 0px;
           }
         }
+      }
+      @include tablet {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
       }
     }
   }

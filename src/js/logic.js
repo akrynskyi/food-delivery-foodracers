@@ -24,6 +24,8 @@ const tabs = document.querySelectorAll("[role-tab]");
 let cart = [];
 // buttons
 let buttonsDOM = [];
+// products
+let productsDOM = [];
 
 // getting the data from json file
 class Data {
@@ -266,7 +268,6 @@ class Render {
     return buttonsDOM.find(button => button.dataset.id === id);
   }
 }
-
 // sort
 class Sort {
   menuSort(menu) {
@@ -363,6 +364,7 @@ class Sort {
   typeSorting() {
     const filter = document.querySelector("#filter");
     const products = [...document.querySelectorAll(".product")];
+    productsDOM = products;
     filter.addEventListener("change", () => {
       let value = filter.value;
       products.forEach(product => {
@@ -374,8 +376,22 @@ class Sort {
       })
     })
   }
+  // search filter
+  searchFilter() {
+    const searchBar = document.forms["search-filter"].querySelector("#search-input");
+    searchBar.addEventListener("keyup", e => {
+      const term = e.target.value.toLowerCase();
+      productsDOM.forEach(product => {
+        let title = product.querySelector(".product-title").textContent;
+        if(title.toLowerCase().indexOf(term) != -1) {
+          product.style.display = "block";
+        } else {
+          product.style.display = "none";
+        }
+      })
+    })
+  }
 }
-
 // local storage
 class Storage {
   static saveMenuItems(menu) {
@@ -410,5 +426,6 @@ document.addEventListener("DOMContentLoaded", () => {
       render.getBagButtons();
       render.cartLogic();
       sort.typeSorting();
+      sort.searchFilter();
     });
 });

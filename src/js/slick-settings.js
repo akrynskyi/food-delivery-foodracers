@@ -6,6 +6,8 @@ $(document).ready(() => {
     speed: 500,
     fade: true,
     cssEase: "linear",
-    draggable: false
+    draggable: false,
+    autoplay: true,
+    autoplaySpeed: 2000
   });
 });
