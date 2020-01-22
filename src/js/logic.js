@@ -17,6 +17,8 @@ const cartTotal = document.querySelector("#orderCheckout");
 const cartItemsContainer = document.querySelector(".cart-item-wrapper");
 // products container
 const productsContainer = document.querySelector(".products-container");
+// tabs
+const tabs = document.querySelectorAll("[role-tab]");
 
 // cart array
 let cart = [];
@@ -30,7 +32,12 @@ class Data {
       let result = await fetch("menu.json");
       let data = await result.json();
       let menu = data.menu;
-      return menu;
+      let beverages = menu.beverages;
+      let italian = menu.italianCuisine;
+      let ukrainian = menu.ukrainianCuisine;
+      let japanese = menu.japaneseCuisine;
+      let menuComplete = italian.concat(ukrainian, japanese, beverages);
+      return menuComplete;
     } catch (error) {
       console.log(error);
     }
@@ -41,7 +48,7 @@ class Render {
   displayProducts(menu) {
     let result = "";
     menu.forEach(item => {
-      if(item.portion === undefined){
+      if (item.portion === undefined) {
         item.portion = "";
       }
       result += `
@@ -224,12 +231,15 @@ class Render {
         let id = lowerAmount.dataset.id;
         let tempItem = cart.find(item => item.id === id);
         tempItem.amount = tempItem.amount - 1;
-        if(tempItem.amount > 0) {
+        if (tempItem.amount > 0) {
           Storage.saveCart(cart);
           this.setCartValues(cart);
           lowerAmount.parentNode.nextElementSibling.innerText = tempItem.amount;
-        }else{
-          cartItemsContainer.removeChild(lowerAmount.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode);
+        } else {
+          cartItemsContainer.removeChild(
+            lowerAmount.parentNode.parentNode.parentNode.parentNode.parentNode
+              .parentNode
+          );
           this.removeItem(id);
         }
       }
@@ -258,16 +268,112 @@ class Render {
 }
 
 // sort
-function menuSort(menu) {
-  let beverages = menu.beverages;
-  let italian = menu.italianCuisine;
-  let menuComplete = italian.concat(beverages);
-  menuComplete.forEach(item => {
-    let type = item.type;
-    console.log(type);
-  });
-  render.displayProducts(menuComplete);
-  Storage.saveMenuItems(menuComplete);
+class Sort {
+  menuSort(menu) {
+    render.displayProducts(menu);
+    Storage.saveMenuItems(menu);
+    // window hash
+    if(window.location.hash === "#ukrainian-cuisine") {
+      this.getUkrainianCuisine(menu);
+      tabs.forEach(tab => {
+        tab.classList.remove("underlined-tabs-container__tab-active");
+        if (tab.getAttribute("data-set") === "ua") {
+          tab.classList.add("underlined-tabs-container__tab-active")
+        }
+      });
+    } else if (window.location.hash === "#italian-cuisine") {
+      this.getItalianCuisine(menu);
+      tabs.forEach(tab => {
+        tab.classList.remove("underlined-tabs-container__tab-active");
+        if (tab.getAttribute("data-set") === "it") {
+          tab.classList.add("underlined-tabs-container__tab-active")
+        }
+      });
+    } else if (window.location.hash === "#japanese-cuisine") {
+      this.getJapaneseCuisine(menu);
+      tabs.forEach(tab => {
+        tab.classList.remove("underlined-tabs-container__tab-active");
+        if (tab.getAttribute("data-set") === "jp") {
+          tab.classList.add("underlined-tabs-container__tab-active")
+        }
+      });
+    }
+    // tabs functionality
+    tabs.forEach(tab => {
+      tab.addEventListener("click", e => {
+        this.tabsAddActiveClass(e);
+        let countryCode = e.target.getAttribute("data-set");
+        if (countryCode ==="all") {
+          render.displayProducts(menu);
+          Storage.saveMenuItems(menu);
+          render.getBagButtons();
+          this.typeSorting();
+        } else if (countryCode === "ua") {
+          this.getUkrainianCuisine(menu);
+          render.getBagButtons();
+          this.typeSorting();
+        } else if (countryCode === "it") {
+          this.getItalianCuisine(menu);
+          render.getBagButtons();
+          this.typeSorting();
+        } else if (countryCode === "jp") {
+          this.getJapaneseCuisine(menu);
+          render.getBagButtons();
+          this.typeSorting();
+        }
+      });
+    });
+  }
+  // add active class
+  tabsAddActiveClass(e) {
+    tabs.forEach(tab => {
+      tab.classList.remove("underlined-tabs-container__tab-active");
+    });
+    e.target.classList.add("underlined-tabs-container__tab-active");
+  }
+  // sorting by cusines
+  getUkrainianCuisine(menu) {
+    let ukrainian = menu.filter(item => {
+      return item.country == "ua";
+    });
+    menu = ukrainian;
+    // this.menuSort(ukrainian);
+    render.displayProducts(menu);
+    Storage.saveMenuItems(menu);
+  }
+  getItalianCuisine(menu) {
+    let italian = menu.filter(item => {
+      return item.country == "it";
+    });
+    menu = italian;
+    // this.menuSort(italian);
+    render.displayProducts(menu);
+    Storage.saveMenuItems(menu);
+  }
+  getJapaneseCuisine(menu) {
+    let japanese = menu.filter(item => {
+      return item.country == "jp";
+    });
+    menu = japanese;
+    // this.menuSort(japanese);
+    render.displayProducts(menu);
+    Storage.saveMenuItems(menu);
+  }
+  // sorting by type
+  typeSorting() {
+    const filter = document.querySelector("#filter");
+    const products = [...document.querySelectorAll(".product")];
+    filter.addEventListener("change", () => {
+      let value = filter.value;
+      products.forEach(product => {
+        if (product.getAttribute("data-type") === value){
+          product.style.display = "block";
+        } else {
+          product.style.display = "none";
+        }
+      })
+    })
+  }
 }
 
 // local storage
@@ -291,6 +397,7 @@ class Storage {
 
 const data = new Data();
 const render = new Render();
+const sort = new Sort();
 
 document.addEventListener("DOMContentLoaded", () => {
   // setup app
@@ -298,26 +405,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // get all products
   data
     .getMenuItems()
-    .then(menu => menuSort(menu))
+    .then(menu => sort.menuSort(menu))
     .then(() => {
       render.getBagButtons();
       render.cartLogic();
+      sort.typeSorting();
     });
 });
-
-// tabs
-const tabs = document.querySelectorAll(".underlined-tabs-container__tab");
-
-tabs.forEach(tab => {
-  tab.addEventListener("click", e => {
-    addActive(e);
-    let country = e.target.getAttribute("data-set");
-    console.log(country);
-  });
-});
-function addActive(e) {
-  tabs.forEach(tab => {
-    tab.classList.remove("underlined-tabs-container__tab--active");
-  });
-  e.target.classList.add("underlined-tabs-container__tab--active");
-}

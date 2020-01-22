@@ -34,6 +34,9 @@
       &__search {
         width: 100%;
         max-width: 550px;
+        @include mobile {
+          display: none;
+        }
         .text-input-with-button {
           display: flex;
           .search-input {
@@ -60,9 +63,6 @@
             cursor: pointer;
           }
         }
-        // @include mobile {
-        //     display: none;
-        // }
       }
       // SEARCH BAR
       .icon-container {

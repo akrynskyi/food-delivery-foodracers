@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/assets/fonts/font-awesome/css/all.min.css">
     <!-- Font Awesome CSS -->
 </head>
-<body>
+<body class="menu-page">
     <!-- NAV FIXED -->
     <nav class="nav-fixed">
         <div class="section-inner">
@@ -138,30 +138,8 @@
                 <li class="sidebar-navigation-list-item ">
                 <a href="menu.html" class="sidebar-navigation-list-item__link colappsible__btn">
                     Меню
-                    <span class="collapsible-plus"></span>
                 </a>
-                <ul class="colappsible-list">
-                    <li class="colappsible-list-item">
-                    <a href="#" class="colappsible-list-item-link">
-                        Комплексні обіди
-                    </a>
-                    </li>
-                    <li class="colappsible-list-item">
-                    <a href="#" class="colappsible-list-item-link">
-                        Українська кухня
-                    </a>
-                    </li>
-                    <li class="colappsible-list-item">
-                    <a href="#" class="colappsible-list-item-link">
-                        Італійська кухня
-                    </a>
-                    </li>
-                    <li class="colappsible-list-item">
-                    <a href="#" class="colappsible-list-item-link">
-                        Японська кухня
-                    </a>
-                    </li>
-                </ul>
+                <!-- colappsible-list -->
                 </li>
                 <li class="sidebar-navigation-list-item">
                 <a href="gallery.html" class="sidebar-navigation-list-item__link">
@@ -256,25 +234,59 @@
         <div class="underlined-tabs">
             <div class="section-inner">
                 <div class="underlined-tabs-container main-wrapper">
-                    <a href="#all" class="underlined-tabs-container__tab underlined-tabs-container__tab--active" data-set="all">
+                    <a href="#all" class="underlined-tabs-container__tab underlined-tabs-container__tab-active" data-set="all" role-tab>
                         Всі страви
                     </a>
-                    <a href="#complex" class="underlined-tabs-container__tab" data-set="complex">
+                    <a href="#complex" class="underlined-tabs-container__tab" data-set="complex" role-tab>
                         Комплексні обіди
                     </a>
-                    <a href="#ukrainian-cuisine" class="underlined-tabs-container__tab" data-set="ua">
+                    <a href="#ukrainian-cuisine" class="underlined-tabs-container__tab" data-set="ua" role-tab>
                         Українська кухня
                     </a>
-                    <a href="#italian-cuisine" class="underlined-tabs-container__tab" data-set="it">
+                    <a href="#italian-cuisine" class="underlined-tabs-container__tab" data-set="it" role-tab>
                         Італійська кухня
                     </a>
-                    <a href="#japanese-cuisine" class="underlined-tabs-container__tab" data-set="jp">
+                    <a href="#japanese-cuisine" class="underlined-tabs-container__tab" data-set="jp" role-tab>
                         Японська кухня
                     </a>
                 </div>
             </div>
         </div>
         <!-- tabs -->
+        <!-- select -->
+        <div class="select-filter">
+            <div class="section-inner">
+                <div class="select-filter-container">
+                    <select name="meal-select" id="filter" class="filter">
+                        <option selected disabled>
+                            Фільтрувати страви
+                        </option>
+                        <option value="pasta">
+                            Паста
+                        </option>
+                        <option value="pizza">
+                            Піца
+                        </option>
+                        <option value="salad">
+                            Салат
+                        </option>
+                        <option value="soup">
+                            Суп
+                        </option>
+                        <option value="sushi">
+                            Суші
+                        </option>
+                        <option value="beverage">
+                            Напої
+                        </option>
+                        <option value="national">
+                            Інше
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!-- select -->
     </header>
     <!-- SECTION HEADER -->
 

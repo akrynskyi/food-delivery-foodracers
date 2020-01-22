@@ -1,5 +1,6 @@
 .footer-link {
     color: $neutral-secondary;
+    display: flex;
 }
 .section-footer {
     // background-color: $neutral-primary;
@@ -27,32 +28,40 @@
                     margin-top: 20px;
                 }
             }
-        &__logo {
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            padding-bottom: 20px;
-            font-size: 32px;
-            position: relative;
-        }
-        &__title {
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            padding-bottom: 20px;
-            font-size: 18px;
-        }
-        .info {
-            padding: 20px 0px;
-            &-box {
-                padding-bottom: 15px;
-                &:last-child {
-                    padding-bottom: 0;
-                }
-                .info-link__text {
-                    margin-left: 10px;
+            &__logo {
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                padding-bottom: 20px;
+                font-size: 32px;
+                position: relative;
+                @include mobile {
+                    font-size: 24px;
                 }
             }
-        }
-        
+            &__title {
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                padding-bottom: 20px;
+                font-size: 18px;
+            }
+            .info {
+                padding: 20px 0px;
+                &-box {
+                    padding-bottom: 15px;
+                    &:last-child {
+                        padding-bottom: 0;
+                    }
+                    .info-link__text {
+                        margin-left: 10px;
+                    }
+                }
+            }
+            @include mobile {
+                align-items: center;
+            }
+            @include smMobile {
+                width: 100%;
+            }
         }
     }
     &-aside {
@@ -66,10 +75,22 @@
                 &-item {
                     &__link {
                         color: $default-color;
+                        transition: color .1s linear;
+                        &:hover {
+                            color: $neutral-regular;
+                        }
+                    }
+                    @include mobile {
+                        padding: 20px 0px;
                     }
                 }
                 @include tablet {
                     justify-content: space-around;
+                }
+                @include mobile {
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
                 } 
             }
             @include tablet {
@@ -117,5 +138,8 @@
     @include tablet {
         display: flex;
         flex-direction: column;
+    }
+    @include smMobile {
+        width: 100%;
     }
 }

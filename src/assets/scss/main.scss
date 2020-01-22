@@ -6,6 +6,7 @@
 @import "buttons.scss";
 @import "burger.scss";
 @import "tabs.scss";
+@import "filter.scss";
 @import "cart.scss";
 @import "sidebar.scss";
 @import "nav-fixed.scss";
@@ -21,7 +22,7 @@ body {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 20px;
 }
 
 .main-wrapper {
@@ -54,6 +55,13 @@ body {
       color: $default-color;
       font-size: 20px;
     }
+    @include mobile {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  @include mobile {
+    width: 100%;
   }
 }
 .social-media--mod {
@@ -64,6 +72,10 @@ body {
     &__link {
       color: $neutral-placeholder;
       font-size: 20px;
+      transition: color .2s linear;
+      &:hover {
+        color: $neutral-regular;
+      }
     }
   }
 }
@@ -337,7 +349,7 @@ body {
 // MENU PAGE
 // section-products
 .section-products {
-  margin: 50px 0px;
+  margin-bottom: 50px;
   .products-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -345,6 +357,9 @@ body {
     grid-row-gap: 40px;
     @include tablet {
       grid-template-columns: repeat(2, 1fr);
+    }
+    @include smTablet {
+      grid-template-columns: repeat(1, 1fr);
     }
     .product {
       background-color: $neutral-light;
@@ -410,6 +425,9 @@ body {
   transition: transform .2s ease-in-out;
   @media only screen and (min-width: $tableWidth) {
     width: 30vw;
+  }
+  @include smMobile {
+    min-width: 100%;
   }
 }
 // cart and sidebar

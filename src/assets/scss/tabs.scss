@@ -1,29 +1,40 @@
 .underlined-tabs {
-    background-color: $neutral-light;
-    &-container {
-        justify-content: center;
-        &__tab {
-            padding: 20px;
-            color: $mainFontColor;
-            position: relative;
-            &::after {
-                content: "";
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                opacity: 0;
-                transition: 0.2s opacity ease;
-                background-color: $primary-color;
-                height: 4px;
-                border-top-left-radius: 2px;
-                border-top-right-radius: 2px;
-            }
-        }
-        &__tab--active {
-            &::after {
-                opacity: 1;
-            }
-        }
+  background-color: $neutral-light;
+  &-container {
+    justify-content: center;
+    &__tab {
+      padding: 20px;
+      color: $mainFontColor;
+      position: relative;
+      text-align: center;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 0;
+        transition: 0.2s opacity ease;
+        background-color: $primary-color;
+        height: 4px;
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+      }
+      @include tablet {
+        font-size: 16px;
+      }
+      @include smTablet {
+        width: 100%;
+        border-bottom: 1px solid $neutral-placeholder;
+      }
     }
+    &__tab-active {
+      &::after {
+        opacity: 1;
+      }
+    }
+    @include smTablet {
+      flex-direction: column;
+    }
+  }
 }

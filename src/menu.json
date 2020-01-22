@@ -131,7 +131,117 @@
         "image": "/assets/img/meals/italian/salad/italian-salad-3.jpg"
       }
     ],
-    "ukrainianCuisine": [],
-    "japanesseCuisine": []
+    "ukrainianCuisine": [
+      {
+        "id": "16",
+        "country": "ua",
+        "type": "national",
+        "title": "Борщ",
+        "price": 55,
+        "portion": "250г",
+        "image": "/assets/img/meals/ukrainian/nationals-dishes/ukrainian-borsch.jpg"
+      },
+      {
+        "id": "17",
+        "country": "ua",
+        "type": "national",
+        "title": "Голубці",
+        "price": 55,
+        "portion": "270г",
+        "image": "/assets/img/meals/ukrainian/nationals-dishes/ukrainian-golubci.jpg"
+      },
+      {
+        "id": "18",
+        "country": "ua",
+        "type": "national",
+        "title": "Вареники",
+        "price": 55,
+        "portion": "280г",
+        "image": "/assets/img/meals/ukrainian/nationals-dishes/ukrainian-vareniki.jpg"
+      },
+      {
+        "id": "19",
+        "country": "ua",
+        "type": "salad",
+        "title": "Салат з буряком",
+        "price": 45,
+        "portion": "200г",
+        "image": "/assets/img/meals/ukrainian/salad/ukrainian-salad.jpg"
+      },
+      {
+        "id": "20",
+        "country": "ua",
+        "type": "soup",
+        "title": "Суп з галушками",
+        "price": 50,
+        "portion": "275г",
+        "image": "/assets/img/meals/ukrainian/soup/ukrainian-soup-1.jpg"
+      },
+      {
+        "id": "21",
+        "country": "ua",
+        "type": "soup",
+        "title": "Суп рибний",
+        "price": 59,
+        "portion": "245г",
+        "image": "/assets/img/meals/ukrainian/soup/ukrainian-soup-2.jpg"
+      }
+    ],
+    "japaneseCuisine": [
+      {
+        "id": "22",
+        "country": "jp",
+        "type": "sushi",
+        "title": "Червоний дракон",
+        "price": 169,
+        "portion": "255г",
+        "image": "/assets/img/meals/japanese/sushi/japanese-sushi-1.jpg"
+      },
+      {
+        "id": "23",
+        "country": "jp",
+        "type": "sushi",
+        "title": "Філа грін",
+        "price": 102,
+        "portion": "270г",
+        "image": "/assets/img/meals/japanese/sushi/japanese-sushi-2.jpg"
+      },
+      {
+        "id": "24",
+        "country": "jp",
+        "type": "sushi",
+        "title": "Каліфорнія з лососем",
+        "price": 99,
+        "portion": "230г",
+        "image": "/assets/img/meals/japanese/sushi/japanese-sushi-3.jpg"
+      },
+      {
+        "id": "25",
+        "country": "jp",
+        "type": "sushi",
+        "title": "Скандинавія",
+        "price": 99,
+        "portion": "225г",
+        "image": "/assets/img/meals/japanese/sushi/japanese-sushi-4.jpg"
+      },
+      {
+        "id": "26",
+        "country": "jp",
+        "type": "sushi",
+        "title": "Футомакі з тунцем",
+        "price": 99,
+        "portion": "270г",
+        "image": "/assets/img/meals/japanese/sushi/japanese-sushi-5.jpg"
+      },
+      {
+        "id": "27",
+        "country": "jp",
+        "type": "sushi",
+        "title": "Філадельфія томаго",
+        "price": 115,
+        "portion": "280г",
+        "image": "/assets/img/meals/japanese/sushi/japanese-sushi-6.jpg"
+      }
+    ]
   }
 }

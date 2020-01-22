@@ -60,4 +60,10 @@
   }
 }
 
+@mixin smMobile {
+  @media only screen and (max-width: #{$smPhoneWidth}) {
+    @content;
+  }
+}
+
 // min-width
