@@ -1,11 +1,11 @@
-Foodracers :tw-1f680:
+Foodracers
 -------------
 
 >Food delivery  Vannila JS project
 
 -------------
 
-####To run the project follow:
+#### To run the project follow:
 
 - `npm install` - to install dependencies
 
@@ -13,7 +13,7 @@ Foodracers :tw-1f680:
 
 - project will run at <http://http://localhost:8081/> 
 
-------------
+-------------
 
 #### Or open link
 
