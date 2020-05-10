@@ -11,7 +11,7 @@ Foodracers
 
 - `npm run dev` - to run the project
 
-- project will run at <http://http://localhost:8081/> 
+- project will run at <http://localhost:8081/>
 
 -------------
 
