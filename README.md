@@ -1,7 +1,7 @@
 Foodracers
 -------------
 
->Food delivery  Vannila JS project
+>Food delivery  pure JavaScript project
 
 -------------
 
